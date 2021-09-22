@@ -1,4 +1,5 @@
-/graphs/
+/results/
 /trainedModel.pt
 /data/originalDataset/
-/data/unsortedDataset/images/
+/data/datasetLabels/images/
+__pycache__

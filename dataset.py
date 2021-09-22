@@ -7,8 +7,6 @@ from torch.utils.data import Dataset
 
 
 class HiRiseDataset(Dataset):
-
-
     def __init__(self, csv_file, root, transform=None):
         self.annotations = pd.read_csv(csv_file)
         self.root = root
