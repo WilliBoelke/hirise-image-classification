@@ -88,14 +88,14 @@ def save_plot():
     plt.plot(train_losses, label="Train Loss")
     plt.plot(test_losses, label="Evaluation Loss")
     plt.legend()
-    plt.savefig("ModelTraining_graph_losses__with_average_dataset_2_newModel-weights.svg")
+    plt.savefig("losses.svg")
     plt.close()
 
     plt.xlabel("Epoch")
     plt.ylabel("Accuracy")
     plt.plot(test_accuracy, label="Test Accuracy")
     plt.legend()
-    plt.savefig("ModelTraining_graph_accuracy__with_average_dataset_newModel-weights.svg")
+    plt.savefig("accuracy.svg")
     plt.close()
 
 
