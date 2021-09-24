@@ -31,7 +31,7 @@ def training():
     percentage = 100. * correct / data_size
     train_accuracy.append(percentage)
     print(
-        "Training: Loss: {:.4f}, Accuracy: {}/{}, ({:.1f}%)".format(total_loss, correct, data_size, percentage))
+        "\n Training: Loss: {:.4f}, Accuracy: {}/{}, ({:.1f}%)".format(total_loss, correct, data_size, percentage))
 
 
 def evaluation():
@@ -52,7 +52,7 @@ def evaluation():
     percentage = 100. * correct / data_size
     test_accuracy.append(percentage)
     print(
-        "Evaluation: Loss: {:.4f}, Accuracy: {}/{}, ({:.1f}%)".format(total_loss, correct, data_size, percentage))
+        "\n Evaluation: Loss: {:.4f}, Accuracy: {}/{}, ({:.1f}%)".format(total_loss, correct, data_size, percentage))
 
 
 # Makes a confusion matrix by sending the whole test data through the
