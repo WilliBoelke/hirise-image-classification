@@ -91,7 +91,8 @@ def save_plot():
 
     plt.xlabel("Epoch")
     plt.ylabel("Accuracy")
-    plt.plot(test_accuracy, label="Test Accuracy")
+    plt.plot(train_accuracy, label="Train Accuracy")
+    plt.plot(test_accuracy, label="Evaluation Accuracy")
     plt.legend()
     plt.savefig("accuracy.svg")
     plt.close()
@@ -125,7 +126,6 @@ if __name__ == "__main__":
 
     # trading loop
     for epoch in tqdm(range(1, number_of_epochs + 1), "Main loop"):
-        print("Epoch " + str(epoch))
         training()
         evaluation()
 
