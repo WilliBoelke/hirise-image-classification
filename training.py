@@ -25,7 +25,7 @@ def training():
         predicted = output.argmax(dim=1, keepdim=True)
         correct += predicted.eq(target.view_as(predicted)).sum().item()
 
-    data_size = len(eval_loader.dataset)
+    data_size = len(train_loader.dataset)
     total_loss /= data_size
     train_losses.append(total_loss)
     percentage = 100. * correct / data_size
@@ -75,12 +75,10 @@ def make_confusion_matrix():
                    '5', '6', '7')
 
         cf_matrix = confusion_matrix(y_true, y_pred)
-        df_cm = pd.DataFrame(cf_matrix / np.sum(cf_matrix) * 10, index=[i for i in classes],
-                             columns=[i for i in classes])
-        plt.figure(figsize=(12, 7))
-        sn.heatmap(df_cm, annot=True)
-        plt.savefig('conf_matrix.png')
 
+        plt.figure(figsize=(12, 7))
+        sn.heatmap(cf_matrix, annot=True)
+        plt.savefig('conf_matrix.png')
 
 def save_plot():
     plt.xlabel("Epoch")
