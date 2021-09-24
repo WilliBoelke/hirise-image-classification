@@ -27,11 +27,10 @@ def weighted(labels, batch_size, class_weights=None):
     if class_weights is None:
         class_weights = [1, 1, 1.85, 1, 1.21, 12.95, 1.85, 4.45]
 
-    m_transforms = transforms.Compose(
-        [
+    m_transforms = transforms.Compose([
             transforms.ToTensor(),
-        ]
-    )
+            transforms.Normalize(0.4847, 0.2107)
+        ])
     dataset = HiRiseDataset(csv_file=labels, root='data/datasetLabels/images', transform=m_transforms)
 
     # lengths
@@ -63,3 +62,14 @@ def weighted(labels, batch_size, class_weights=None):
                              shuffle=False, sampler=eval_sampler)
 
     return train_loader, eval_loader
+
+
+def calculate_mean_and_std_derivation():
+    dataset = HiRiseDataset(csv_file='data/datasetLabels/average_sample_dataset_labels.csv',  root='data/datasetLabels/images',   transform=transforms.ToTensor())
+    loader  = DataLoader(pin_memory=True, num_workers=1, dataset=dataset, batch_size=len(dataset))
+    data = next(iter(loader))
+    print(data[0].mean())
+    print(data[0].std())
+    # result :
+    # tensor(0.4847)
+    # tensor(0.2107)

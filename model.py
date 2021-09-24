@@ -19,7 +19,6 @@ class HiRiseModel(nn.Module):
 
     def forward(self, x):
         x = self.convolution1(x)
-        x = self.conv_dropout(x)
         x = F.max_pool2d(x, 2)  # pooling layer
         x = F.relu(x)
         x = self.convolution2(x)
