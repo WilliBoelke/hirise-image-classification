@@ -25,7 +25,7 @@ def training():
         predicted = output.argmax(dim=1, keepdim=True)
         correct += predicted.eq(target.view_as(predicted)).sum().item()
 
-    data_size = len(eval_loader.dataset)
+    data_size = len(train_loader.dataset)
     total_loss /= data_size
     train_losses.append(total_loss)
     percentage = 100. * correct / data_size
@@ -109,7 +109,7 @@ if __name__ == "__main__":
 
     # model and data
     model = HiRiseModel().to(device)
-    train_loader, eval_loader = get_dataloader.random_sampler('data/datasetLabels/476_sample_dataset_labels.csv',
+    train_loader, eval_loader = get_dataloader.weighted('data/datasetLabels/average_sample_dataset_labels.csv',
                                                               batch_size=m_batch_size)
 
     # algorithms
