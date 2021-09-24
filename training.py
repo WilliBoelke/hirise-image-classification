@@ -71,14 +71,10 @@ def make_confusion_matrix():
             labels = target.data.cpu().numpy()
             y_true.extend(labels)  # Save Truth
 
-        classes = ('others', '1', '2', '3', '4',
-                   '5', '6', '7')
-
         cf_matrix = confusion_matrix(y_true, y_pred)
-        df_cm = pd.DataFrame(cf_matrix / np.sum(cf_matrix) * 10, index=[i for i in classes],
-                             columns=[i for i in classes])
+
         plt.figure(figsize=(12, 7))
-        sn.heatmap(df_cm, annot=True)
+        sn.heatmap(cf_matrix, annot=True)
         plt.savefig('conf_matrix.png')
 
 
@@ -111,7 +107,7 @@ if __name__ == "__main__":
 
     # model and data
     model = HiRiseModel().to(device)
-    train_loader, eval_loader = get_dataloader.random_sampler('data/datasetLabels/equal_dataset_labels.csv',
+    train_loader, eval_loader = get_dataloader.random_sampler('data/datasetLabels/complete_dataset_labels.csv',
                                                               batch_size=m_batch_size)
 
     # algorithms
