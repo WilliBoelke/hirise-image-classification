@@ -75,27 +75,25 @@ def make_confusion_matrix():
                    '5', '6', '7')
 
         cf_matrix = confusion_matrix(y_true, y_pred)
-        df_cm = pd.DataFrame(cf_matrix / np.sum(cf_matrix) * 10, index=[i for i in classes],
-                             columns=[i for i in classes])
         plt.figure(figsize=(12, 7))
-        sn.heatmap(df_cm, annot=True)
+        sn.heatmap(cf_matrix, annot=True)
         plt.savefig('conf_matrix.png')
 
 
 def save_plot():
     plt.xlabel("Epoch")
-    plt.ylabel("Average Loss")
+    plt.ylabel("Loss")
     plt.plot(train_losses, label="Train Loss")
     plt.plot(test_losses, label="Evaluation Loss")
     plt.legend()
-    plt.savefig("ModelTraining_graph_losses__with_average_dataset_2_newModel-weights.svg")
+    plt.savefig("Loss.svg")
     plt.close()
 
     plt.xlabel("Epoch")
     plt.ylabel("Accuracy")
     plt.plot(test_accuracy, label="Test Accuracy")
     plt.legend()
-    plt.savefig("ModelTraining_graph_accuracy__with_average_dataset_newModel-weights.svg")
+    plt.savefig("accuracy.svg")
     plt.close()
 
 
