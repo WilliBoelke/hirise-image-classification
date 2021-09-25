@@ -105,7 +105,7 @@ if __name__ == "__main__":
 
     # Hyper paramater
     m_learning_rate = 0.3
-    m_batch_size = 64
+    m_batch_size = 32
     number_of_epochs = 30
     m_momentum = 0.1
     # model and data
