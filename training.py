@@ -110,7 +110,7 @@ if __name__ == "__main__":
     m_momentum = 0.1
     # model and data
     model = HiRiseModel().to(device)
-    train_loader, eval_loader = get_dataloader.weighted('data/datasetLabels/average_sample_dataset_labels.csv',
+    train_loader, eval_loader = get_dataloader.weighted('data/datasetLabels/4238_sample_dataset_labels.csv',
                                                               batch_size=m_batch_size)
 
     # algorithms

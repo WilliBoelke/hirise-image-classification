@@ -48,6 +48,12 @@ def make_average_samples_dataset():
         group.head(2119).to_csv("average_sample_dataset_labels.csv", mode="a", index=False, header=False)
 
 
-make_equal_dataset()
-make_476_sample_dataset()
-make_dataset_without_others()
+def make_4238_samples_dataset():
+    df = pd.read_csv("complete_dataset_labels.csv", usecols=['path', 'label'])
+    grouped = df.groupby(by="label")
+
+    for label, group in grouped:
+        group.head(4238).to_csv("4238_sample_dataset_labels.csv", mode="a", index=False, header=False)
+
+
+make_4238_samples_dataset()
