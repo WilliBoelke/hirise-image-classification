@@ -26,7 +26,7 @@ def random_sampler(labels, batch_size):
 def weighted(labels, batch_size, class_weights=None):
     if class_weights is None:
         # class_weights = [1, 1, 1.85, 1, 1.21, 12.95, 1.85, 4.45]
-        class_weights = [1, 1, 3.71, 1.82, 2.42, 18.35, 3.69, .68]
+        class_weights = [1, 1, 3.71, 1.82, 2.42, 18.35, 3.69, 5.68]
 
     m_transforms = transforms.Compose([
             transforms.ToTensor(),
