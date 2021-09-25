@@ -30,8 +30,8 @@ def weighted(labels, batch_size, class_weights=None):
     m_transforms = transforms.Compose([
             transforms.ToTensor(),
             transforms.Normalize(0.4847, 0.2107),
-            transforms.RandomAdjustSharpness(5),
-            transforms.RandomRotation(50)
+            transforms.RandomAdjustSharpness(3),
+            transforms.RandomRotation(35)
         ])
     dataset = HiRiseDataset(csv_file=labels, root='data/datasetLabels/images', transform=m_transforms)
 
