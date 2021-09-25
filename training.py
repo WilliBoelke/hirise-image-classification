@@ -109,13 +109,13 @@ if __name__ == "__main__":
 
     # model and data
     model = HiRiseModel().to(device)
-    train_loader, eval_loader = get_dataloader.random_sampler('data/datasetLabels/476_sample_dataset_labels.csv',
+    train_loader, eval_loader = get_dataloader.random_sampler('data/datasetLabels/complete_dataset_labels.csv',
                                                               batch_size=m_batch_size)
 
     # algorithms
     optimizer = torch.optim.Adadelta(model.parameters())
-    lossFunction = torch.nn.CrossEntropyLoss()
-    # lossFunction = torch.nn.CrossEntropyLoss(weight=torch.Tensor([1, 1, 1.85, 1, 1.21, 12.95, 1.85, 4.45]).to(device))
+    # lossFunction = torch.nn.CrossEntropyLoss()
+    lossFunction = torch.nn.CrossEntropyLoss(weight=torch.Tensor([1, 12.46, 53.5, 26.19, 34.89, 264.3, 53.18, 128.26]).to(device))
 
     # statistics
     train_losses = []
