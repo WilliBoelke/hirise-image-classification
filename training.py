@@ -104,8 +104,8 @@ if __name__ == "__main__":
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
     # Hyper paramater
-    m_learning_rate = 0.3
-    m_batch_size = 64
+    m_learning_rate = 0.03
+    m_batch_size = 16
     number_of_epochs = 30
     m_momentum = 0.1
     # model and data
