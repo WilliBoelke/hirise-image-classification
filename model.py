@@ -14,7 +14,7 @@ class HiRiseModel(nn.Module):
         self.conv_dropout = nn.Dropout2d()
         self.fully_con_linear_layer1 = nn.Linear(4410, 4410)
         self.fully_con_linear_layer2 = nn.Linear(4410, 4410)
-        self.fully_con_linear_layer3 = nn.Linear(4410, 4410)
+        #self.fully_con_linear_layer3 = nn.Linear(4410, 4410)
         self.fully_con_linear_layer4 = nn.Linear(4410, number_of_classes)
 
     def forward(self, x):
@@ -30,6 +30,6 @@ class HiRiseModel(nn.Module):
         x = x.view(-1, 4410)
         x = F.relu(self.fully_con_linear_layer1(x))
         x = F.relu(self.fully_con_linear_layer2(x))
-        x = F.relu(self.fully_con_linear_layer3(x))
+        #x = F.relu(self.fully_con_linear_layer3(x))
         x = self.fully_con_linear_layer4(x)
         return F.log_softmax(x, dim=1)
