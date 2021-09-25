@@ -12,10 +12,10 @@ class HiRiseModel(nn.Module):
         self.convolution1 = nn.Conv2d(1, 5, kernel_size=m_kernel_size)
         self.convolution2 = nn.Conv2d(5, 10, kernel_size=m_kernel_size)
         self.conv_dropout = nn.Dropout2d()
-        self.fully_con_linear_layer1 = nn.Linear(4410, 4410)
-        self.fully_con_linear_layer2 = nn.Linear(4410, 4410)
+        self.fully_con_linear_layer1 = nn.Linear(4410, 2200)
+        self.fully_con_linear_layer2 = nn.Linear(2200, 1100)
         #self.fully_con_linear_layer3 = nn.Linear(4410, 4410)
-        self.fully_con_linear_layer4 = nn.Linear(4410, number_of_classes)
+        self.fully_con_linear_layer4 = nn.Linear(1100, number_of_classes)
 
     def forward(self, x):
         x = self.convolution1(x)
