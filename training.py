@@ -104,8 +104,8 @@ if __name__ == "__main__":
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
     # Hyper paramater
-    m_learning_rate = 0.3
-    m_batch_size = 64
+    m_learning_rate = 0.01
+    m_batch_size = 16
     number_of_epochs = 30
     m_momentum = 0.1
     # model and data
@@ -114,7 +114,7 @@ if __name__ == "__main__":
                                                               batch_size=m_batch_size)
 
     # algorithms
-    optimizer = torch.optim.Adadelta(model.parameters())
+    optimizer = torch.optim.SGD(model.parameters())
     lossFunction = torch.nn.CrossEntropyLoss()
     # lossFunction = torch.nn.CrossEntropyLoss(weight=torch.Tensor([1, 1, 1.85, 1, 1.21, 12.95, 1.85, 4.45]).to(device))
 
