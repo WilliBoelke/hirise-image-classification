@@ -106,7 +106,7 @@ if __name__ == "__main__":
     # Hyper paramater
     m_learning_rate = 0.3
     m_batch_size = 32
-    number_of_epochs = 30
+    number_of_epochs = 200
     m_momentum = 0.1
     # model and data
     model = HiRiseModel().to(device)
