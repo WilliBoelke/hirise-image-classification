@@ -1,4 +1,5 @@
 # Erkennung von Landmarks auf Satellitenbildern der Marsoberfläche
+(Erarbeitet im Modul `KI in der Robotik` an der HTW Berlin, 2021)
 
 ## Inhalt
 
